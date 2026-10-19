@@ -34,7 +34,8 @@
     "dev": "vite demo",
     "build": "tsup && cp src/style.css dist/style.css",
     "build:demo": "vite build demo",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
   },
   "peerDependencies": {
     "react": ">=18"
