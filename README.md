@@ -2,6 +2,8 @@
 
 A ticket whose stub tears off corner to corner, one jelly joint at a time.
 
+**[Try the demo →](https://alexko0421.github.io/tear-off-ticket/)**
+
 Grab the stub and pull. It lifts off the ticket and pivots on the far corner, the perforation stretches, the joints snap in order, and the main part gets tugged along and wobbles back as each one goes. Let go early and the stub springs back with whatever joints are left. Let go once it's free and it flutters down like paper.
 
 - Zero-dependency core (~24 KB unminified), works with any framework or none
