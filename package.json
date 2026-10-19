@@ -1,0 +1,66 @@
+{
+  "name": "tear-off-ticket",
+  "version": "0.1.0",
+  "description": "A ticket whose stub tears off joint by jelly joint. Zero-dependency core + React component.",
+  "license": "MIT",
+  "author": "Alex Ko",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexko0421/tear-off-ticket.git"
+  },
+  "homepage": "https://github.com/alexko0421/tear-off-ticket",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite demo",
+    "build": "tsup && cp src/style.css dist/style.css",
+    "build:demo": "vite build demo",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.0.0"
+  },
+  "keywords": [
+    "ticket",
+    "tear",
+    "react",
+    "micro-interaction",
+    "animation",
+    "spring"
+  ]
+}

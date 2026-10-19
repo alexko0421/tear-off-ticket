@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f6f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f0f11" media="(prefers-color-scheme: dark)" />
+    <title>Tear-off Ticket</title>
+    <meta name="description" content="A ticket whose stub tears off joint by jelly joint. Open source, zero-dependency core with a React component." />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <section class="vanilla" aria-labelledby="vanilla-title">
+      <header class="intro">
+        <h2 id="vanilla-title">No React</h2>
+        <p>Same core, plain HTML. <code>createTearOff(el)</code></p>
+      </header>
+      <div class="stage stage--small">
+        <div class="tot" id="vanilla-ticket">
+          <div class="tot-main">
+            <div class="ticket-main ticket-main--compact">
+              <span class="eyebrow">Cloakroom</span>
+              <span class="title">Coat check</span>
+              <span class="meta">Hook 118 · Level 2</span>
+            </div>
+          </div>
+          <div class="tot-stub">
+            <div class="ticket-stub ticket-stub--compact">
+              <span class="eyebrow">No.</span>
+              <span class="number">118</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <a href="https://github.com/alexko0421/tear-off-ticket">GitHub</a>
+      <span aria-hidden="true">·</span>
+      <span>MIT</span>
+      <span aria-hidden="true">·</span>
+      <span>Inspired by the Tear-off Ticket on <a href="https://bencho.dev">bencho.dev</a></span>
+    </footer>
+
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

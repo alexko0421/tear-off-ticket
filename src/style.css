@@ -1,0 +1,98 @@
+.tot {
+  --tot-paper: #ffffff;
+  --tot-ink: #121212;
+  --tot-muted: #8c8c8c;
+  --tot-perf: rgb(0 0 0 / 0.3);
+  --tot-radius: 20px;
+  --tot-notch: 10px;
+
+  position: relative;
+  display: inline-flex;
+  color: var(--tot-ink);
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)) drop-shadow(0 10px 28px rgb(0 0 0 / 0.08));
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tot[data-theme="dark"] {
+  --tot-paper: #1f1f22;
+  --tot-ink: #f2f2f2;
+  --tot-muted: #8a8a90;
+  --tot-perf: rgb(255 255 255 / 0.32);
+}
+
+.tot-main,
+.tot-stub {
+  position: relative;
+  background: var(--tot-paper);
+}
+
+/* Half-circle notches where the perforation meets the edges. */
+.tot-main {
+  border-radius: var(--tot-radius) 0 0 var(--tot-radius);
+  -webkit-mask:
+    radial-gradient(circle var(--tot-notch) at 100% 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle var(--tot-notch) at 100% 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+  mask:
+    radial-gradient(circle var(--tot-notch) at 100% 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle var(--tot-notch) at 100% 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+}
+
+.tot-stub {
+  border-radius: 0 var(--tot-radius) var(--tot-radius) 0;
+  -webkit-mask:
+    radial-gradient(circle var(--tot-notch) at 0 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle var(--tot-notch) at 0 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+  mask:
+    radial-gradient(circle var(--tot-notch) at 0 0, #0000 98%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle var(--tot-notch) at 0 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+  touch-action: none;
+  cursor: grab;
+}
+
+/* Carries the stub so it can lift off the ticket with its own shadow. */
+.tot-lift {
+  position: relative;
+  display: flex;
+  z-index: 3;
+  will-change: transform;
+}
+
+.tot[data-dragging] .tot-stub {
+  cursor: grabbing;
+}
+
+.tot[data-state="gone"] .tot-lift {
+  pointer-events: none;
+}
+
+.tot-stub:focus-visible {
+  outline: none;
+}
+
+.tot:has(.tot-stub:focus-visible) {
+  outline: 2px solid color-mix(in oklab, var(--tot-ink) 40%, transparent);
+  outline-offset: 6px;
+  border-radius: calc(var(--tot-radius) + 6px);
+}
+
+.tot-tissue {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tot-bridge,
+.tot-fiber,
+.tot-fringe {
+  fill: var(--tot-paper);
+}
+
+.tot-hole {
+  fill: var(--tot-perf);
+}
