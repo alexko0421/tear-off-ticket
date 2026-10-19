@@ -1,5 +1,7 @@
 # Tear-off Ticket
 
+English | [中文](https://github.com/alexko0421/tear-off-ticket/blob/main/README.zh.md)
+
 A ticket whose stub tears off corner to corner, one jelly joint at a time.
 
 **[Try the demo →](https://alexko0421.github.io/tear-off-ticket/)**
@@ -86,7 +88,7 @@ Everything visual is a CSS variable on `.tot`:
   --tot-paper: #fff;   /* ticket fill, also used for the stretching joints */
   --tot-ink: #121212;
   --tot-muted: #8c8c8c;
-  --tot-perf: rgb(0 0 0 / 0.16);  /* perforation dots */
+  --tot-perf: rgb(0 0 0 / 0.3);  /* perforation dots */
   --tot-radius: 20px;
   --tot-notch: 10px;
 }
